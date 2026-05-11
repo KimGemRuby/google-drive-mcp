@@ -16,10 +16,8 @@ COPY dist ./dist
 # Create directory for config files
 RUN mkdir -p /config
 
-# Set environment variables
+# Set environment variables (credential paths must be passed at runtime via -e or docker-compose)
 ENV NODE_ENV=production
-ENV GOOGLE_DRIVE_OAUTH_CREDENTIALS=/config/gcp-oauth.keys.json
-ENV GOOGLE_DRIVE_MCP_TOKEN_PATH=/config/tokens.json
 
 # Make the main script executable
 RUN chmod +x dist/index.js
