@@ -1,16 +1,65 @@
+# ── Dependencies & build artifacts ──
 node_modules
-npm-debug.log
-.env*
-!.env.example
+.tmp-test
+coverage
+.nyc_output
+.cache
+
+# ── Git / IDE / OS ──
 .git
 .gitignore
-.DS_Store
-*.log
-src/
-scripts/
-tsconfig.json
+.gitattributes
+.github
 .vscode/
 .idea/
-gcp-oauth.keys.json
-tokens.json
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# ── Source (only dist/ is needed at runtime) ──
+src/
+scripts/
+test/
+tsconfig.json
+tsconfig.test.json
+eslint.config.js
+.npmignore
+.cursorignore
+.claude/
+
+# ── Logs ──
+*.log
+npm-debug.log*
+yarn-debug.log*
 auth.log
+
+# ── Documentation ──
+README.md
+CHANGELOG.md
+LICENSE
+
+# ── Secrets & credentials (DS-0031 hardening) ──
+.env*
+!.env.example
+gcp-oauth.keys.json
+gcp-oauth.keys.example.json
+client_secret.json
+client_secret_*
+tokens.json
+google-tokens.json
+.gcp-saved-tokens.json
+credentials*
+*.key
+*.pem
+*.p12
+*.pfx
+*.jks
+*.keystore
+config/
+.config/
+
+# ── Catch-all secret patterns ──
+*secret*
+*credential*
+*token*.json
